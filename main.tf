@@ -1,6 +1,6 @@
 # This HACK installs NPM packages on every run so we get lambda function ready to be published
 resource "null_resource" "pull_and_install_github_repo" {
-  triggers {
+  triggers = {
     force_run = uuid()
   }
   provisioner "local-exec" {
